@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<head>
+	<title>Inversare de imagine</title>
+	<script type="text/javascript" src="Js.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            color: #f2f5f7;
+            font-family: sans-serif;
+            letter-spacing: 1px;
+            font-weight: 300;
+        }
+        /* Se seteaza caracteristici generale */
+
+        body {
+            background-image: url("nori2.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+            margin-bottom: 0px;
+
+        }
+        /* Se seteaza caracteristici pentru body-ul documentului in ceea ce priveste fundalul */
+        
+        canvas{
+             display: block;
+             margin-top: 60px;
+             margin-left: auto;
+              margin-right: auto;
+  
+        }
+        .divmeu {
+            width: 100%;
+            height: auto;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            border: 0;
+            margin-top: 200px;
+            background-color: #fff;
+            opacity: 0.8;
+
+        }
+        /* Se creaza o clasa pentru deteerminarea unei diviziuni(diviziunea principala din cadrul body-ului)  */
+
+        nav {
+            height: 6rem;
+            width: 100%;
+            display: flex;
+            position: relative;
+            z-index: 10;
+            top: 0;
+            background-color: #71b8ce;
+            box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+
+        }
+       /* Clasa pentru caracteristici bara de navigatie */
+
+        .nav-links {
+            width: 80vw;
+            display: flex;
+            padding: 0 0.7vw;
+            justify-content: space-evenly;
+            align-items: center;
+            text-transform: uppercase;
+            list-style: none;
+            font-weight: 600;
+
+
+        }
+        /* caracteristici diviziune creata pentru link uri din cadrul barii de navigatie*/
+
+        .nav-links a {
+            margin: 0 0.7vw;
+            text-decoration: none;
+            transition: all ease-in-out 350ms;
+            padding: 10px;
+        }
+        /* caracteristici pentru hyperlink-urile din cadrul nav-links*/
+
+        .nav-links a:hover {
+            color: #000;
+            background-color: #fff;
+            padding: 10px;
+            border-radius: 50px;
+        }
+        /* Caracterisitici cand unul dintre link-uri este selectat*/
+
+        img {
+            height: 40px;
+            width: auto;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        /* caracteristici pentru imagini in cadrul documentului(caracterisiticile au fost setate in special pentru imaginile din footer)*/
+
+        h1,
+        h2,
+        p,
+        h3 {
+            text-align: center;
+            font-family: monospace;
+            color: #000;
+            padding-left: 300px;
+            padding-right: 300px;
+
+        }
+        /*carac. pentru primele 3 tipuri de header si paragraf */
+
+        footer {
+            bottom: 0;
+            width: 100%;
+            background-color: #1b2b30;
+            padding-top: 7px;
+            padding-bottom: 7px;
+            margin-top: 150px;
+            position: relative;
+            overflow: hidden;
+        }
+        /*carac. footer (zona de jos a paginii ce contine link-uri de contact si drepturi asupra continutului) */
+
+        .logo {
+            padding: 25px;
+            align-items: left;
+            width: 20vw;
+        }
+        /*diviziune pentru logo-ul ce se afla in cadrul barii de navigatie */
+        .logo img {
+            height: 40px;
+            width: auto;
+        }
+        /*carac. poza logo */
+
+        /*.anotherdiv {
+            display: inline-block;
+            width: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 100;
+            margin-left: 620px;
+
+        }*/
+
+        .socials {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 30px 0 30px 0;
+        }
+        /*diviziune pentru link-uri de contact din footer */
+
+        @media screen and (max-width: 600px) { /*in continuare se redefinesc caracteristici ale anumitor clase pentru incadrarea continutului in diferite dimensiuni */
+/* pentru pagini de marimi mici(telefon)*/
+            h1,
+            h2,
+            p,
+            h3 {
+                text-align: center;
+                font-family: monospace;
+                color: #000;
+                padding-left: 10%;
+                padding-right: 10%;
+
+            }
+
+
+            .divmeu {
+                width: 100%;
+                height: auto;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border: 0;
+                margin-top: 100px;
+                background-color: #fff;
+                opacity: 0.8;
+
+            }
+            
+
+            footer {
+                bottom: 0px;
+                position: relative;
+            }
+
+            .socials img {
+                width: auto;
+                height: 40px;
+            }
+            
+            nav{
+            width: 100%;
+            height: auto;
+            padding: 10px 0 0 10px;
+            height:auto;
+            display:inline-block;
+            align-items: center;  
+            margin:0;    
+            }
+            .logo{
+                align-items: center;
+                width: 100%;
+                padding:0;
+            }
+
+            .nav-links{
+                background-color:#71b8ce;
+                width:100%;
+                height: auto;
+                display:inline-block; 
+                padding: 0;
+                margin:0;
+                          
+            }
+            .nav-links a{
+                width:100%;
+                height: auto;
+                display:inline-block;
+                padding-top: 10px;
+                padding-left: 0;
+                padding-right: 0;
+                margin:0;
+            }
+
+        }
+/*pentru pagini de marime medie(tableta)*/
+        @media (min-width: 600px) and (max-width: 1199px){
+            h1,
+            h2,
+            p,
+            h3 {
+                text-align: center;
+                font-family: monospace;
+                color: #000;
+                padding-left: 10%;
+                padding-right: 10%;
+
+            }
+            footer {
+                bottom: 0px;
+                position: fixed;
+            }
+        }
+
+    </style>
+
+
+
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img decoding="async" src="logoalb.png" alt="Logo Image"> 
+        </div>
+        <div class="nav-links">
+        </div>
+    </nav>
+    </div>
+
+   
+
+         <canvas id="myCanvas"></canvas>
+
+    
+    <footer>
+        <div class="footer">
+            <div class="socials">
+
+                <a href="https://web.facebook.com/alexandra.matei.92372/"><img src="f2.png"></a>
+                <a href="https://www.instagram.com/alexandra_miha_/"><img src="f1.png"></a>
+                <a href="https://github.com/Aleex2"><img src="f3.png"></a>
+            </div>
+        </div>
+        <p style="color:azure"> work © Alexandra Mihaela 2022 • all rights reserved </p>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
